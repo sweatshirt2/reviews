@@ -1,7 +1,6 @@
-import { Router } from 'express';
-import passport from 'passport';
-import { addReview } from '../controllers/reviewController';
-import { getAllReviews } from '../services/reviewService';
+import { Router } from "express";
+import passport from "passport";
+import { addReview, getAllReviews } from "../controllers/reviewController";
 
 const router = Router();
 
@@ -45,7 +44,7 @@ const router = Router();
  *       401:
  *         description: Unauthorized
  */
-router.post('/', passport.authenticate('jwt', { session: false }), addReview);
+router.post("/", passport.authenticate("jwt", { session: false }), addReview);
 
 /**
  * @swagger
@@ -72,7 +71,6 @@ router.post('/', passport.authenticate('jwt', { session: false }), addReview);
  *                   rating:
  *                     type: number
  */
-// router.post('/', passport.authenticate('jwt', { session: false }), getAllReviews);
-router.get('/', getAllReviews);
+router.get("/", getAllReviews);
 
 export default router;

@@ -24,3 +24,8 @@ export const getReviews = async (req: IRequestWithUser, res: Response) => {
     const reviews = await reviewService.getReviews(bookId);
     res.json(reviews);
 };
+
+export const getAllReviews = async (req: IRequestWithUser, res: Response) => {
+    const reviews = await reviewService.getAllReviews();
+    res.json(reviews);
+}

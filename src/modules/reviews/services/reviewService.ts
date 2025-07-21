@@ -31,9 +31,8 @@ export const addReview = (
   console.log("Sent review creation event for book:", bookId);
 };
 
-export const getAllReviews = () => {
-  return sendRpc(ALL_REVIEWS_PATTERN, {});
-  //   return requestResponse(REVIEW_QUEUE, ALL_REVIEWS_PATTERN, undefined);
+export const getAllReviews = async () => {
+  return await sendRpc(ALL_REVIEWS_PATTERN, {});
 };
 
 /**

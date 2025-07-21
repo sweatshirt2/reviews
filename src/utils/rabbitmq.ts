@@ -77,8 +77,7 @@ export const sendRpc = async (pattern: string, message: any) => {
   try {
     await client.connect();
     const result = await client.send(pattern, message).toPromise();
-    console.log("result from nest", result);
-    // await client.close();
+    await client.close();
 
     return result;
   } catch (error) {
