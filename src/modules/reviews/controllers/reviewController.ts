@@ -19,8 +19,8 @@ export const addReview = (req: IRequestWithUser, res: Response) => {
     res.status(201).json(newReview);
 };
 
-export const getReviews = (req: IRequestWithUser, res: Response) => {
+export const getReviews = async (req: IRequestWithUser, res: Response) => {
     const bookId = req.params.id;
-    const reviews = reviewService.getReviews(bookId);
+    const reviews = await reviewService.getReviews(bookId);
     res.json(reviews);
 };
