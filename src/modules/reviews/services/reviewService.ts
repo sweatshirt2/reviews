@@ -42,7 +42,5 @@ export const getAllReviews = async () => {
  */
 export const getReviews = (bookId: string): Promise<Review[]> => {
   const payload = { bookId };
-
-  // Use requestResponse for messages that require a response from the microservice.
-  return requestResponse(REVIEW_QUEUE, BOOK_REVIEWS_PATTERN, payload);
+  return sendRpc(BOOK_REVIEWS_PATTERN, payload);
 };
